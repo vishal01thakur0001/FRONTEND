@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Grid Dashboard Layout</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <header>
+            <div class="top-row">
+                <div class="brand">Acme Analytics</div>
+                <div class="muted">• Admin Dashboard</div>
+            </div>
+            <div class="search">
+                <input type="search" placeholder="Search..." aria-label="Search" style="padding:8px;border-radius:8px;border:1px solid #e6eef8">
+                <button style="padding:8px 10px;border-radius:8px;border:none;background:var(--accent);color:#fff">Search</button>
+            </div>
+        </header>
+
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#" class="active">Overview</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Customers</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="cards" aria-label="Key metrics">
+                <div class="card">
+                    <h3>Revenue</h3>
+                    <p class="muted">₹ 120,000</p>
+                </div>
+                <div class="card">
+                    <h3>Orders</h3>
+                    <p class="muted">1,430</p>
+                </div>
+                <div class="card">
+                    <h3>Active Users</h3>
+                    <p class="muted">3,200</p>
+                </div>
+                <div class="card">
+                    <h3>Conversion</h3>
+                    <p class="muted">2.4%</p>
+                </div>
+                <div class="card">
+                    <h3>New Clients</h3>
+                    <p class="muted">43</p>
+                </div>
+                <div class="card">
+                    <h3>Pending</h3>
+                    <p class="muted">7</p>
+                </div>
+            </section>
+
+            <section style="margin-top:14px">
+                <div class="card">
+                    <h3>Recent Orders</h3>
+                    <p class="muted">Order table or list would go here (scrollable)</p>
+                </div>
+            </section>
+        </main>
+
+        <aside>
+            <div class="widget"><strong>Server Status</strong>
+                <p class="muted">All systems operational</p>
+            </div>
+            <div class="widget"><strong>Notifications</strong>
+                <p class="muted">3 unread</p>
+            </div>
+            <div class="widget"><strong>Quick Links</strong>
+                <p class="muted">Shortcuts</p>
+            </div>
+        </aside>
+
+        <footer>
+            <div class="muted">© 2025 Acme • Built with CSS Grid</div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
