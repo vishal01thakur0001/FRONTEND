@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ultra Profile Card — Mixed Hybrid</title>
+    <style>
+         :root {
+            --bg1: #4582c4;
+            --bg2: #ad4e4e;
+            --muted: #52606d;
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --glass-blur: 10px;
+            --card-w: 320px;
+            --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.12);
+            --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+        
+        body {
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(160deg, var(--bg1), var(--bg2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+        }
+        
+        .wrap {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .card {
+            width: var(--card-w);
+            border-radius: 18px;
+            padding: 20px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.18));
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-1), var(--shadow-2);
+            backdrop-filter: blur(var(--glass-blur));
+            transform: translateY(0);
+            transition: transform .24s ease, box-shadow .24s ease, .24s ease;
+            animation: floatIn .6s cubic-bezier(.2, .9, .3, 1);
+            position: relative;
+            overflow: visible;
+        }
+        
+        .card:hover {
+            transform: translateY(-12px) scale(1.01);
+            box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .avatar-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: -56px;
+            pointer-events: none;
+        }
+        
+        .avatar {
+            width: 112px;
+            height: 112px;
+            border-radius: 999px;
+            object-fit: cover;
+            border: 6px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 8px 24px rgba(14, 20, 30, 0.12);
+            background: linear-gradient(135deg, #fff, #f0f6ff);
+        }
+        
+        .info {
+            text-align: center;
+            margin-top: 12px;
+            padding: 6px 8px;
+        }
+        
+        h1.name {
+            font-size: 1.25rem;
+            margin: 6px 0;
+            cursor: text;
+        }
+        
+        h2.role {
+            font-size: .92rem;
+            margin: 0;
+            color: var(--muted);
+            cursor: text;
+        }
+        
+        p.bio {
+            margin: 10px 0 6px;
+            color: var(--muted);
+            font-size: .9rem;
+            white-space: pre-line;
+            cursor: text;
+        }
+        
+        .skills {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        
+        .skill {
+            padding: 6px 10px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0.02));
+            border-radius: 999px;
+            font-size: .82rem;
+            color: #0b1220;
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .skill button {
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--muted);
+            padding: 0 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap" id="pageWrap">
+        <div class="card" id="card">
+
+
+
+            <div class="avatar-wrap" aria-hidden="true">
+                <img id="avatar" class="avatar" src="Vishal.jpg" alt="Profile avatar">
+
+            </div>
+
+
+            <div class="info" id="infoBlock">
+                <h1 id="name" class="name" contenteditable="false" title="Double-click to edit">Vishal Singh</h1>
+                <h2 id="role" class="role" contenteditable="false">Full-Stack Web Developer</h2>
+                <p id="bio" class="bio" contenteditable="false">I build practical projects and learn daily — JavaScript, .NET, and Web.</p>
+
+                <div class="skills" id="skills" aria-live="polite">
+
+                    <span class="skill">HTML <button class="rm-skill" title="remove">×</button></span>
+                    <span class="skill">CSS <button class="rm-skill" title="remove">×</button></span>
+                    <span class="skill">JS <button class="rm-skill" title="remove">×</button></span>
+                </div>
+            </div>
+        </div>
+
+</html>

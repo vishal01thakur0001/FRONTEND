@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Todo App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0>">
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        flex-direction: column;
+        font-size: 28px;
+    }
+    
+    #task {
+        height: 1000px;
+        width: 1000px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        background-image: url(task.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    
+    #taskInput {
+        width: 70%;
+        padding: 20px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+    
+    button {
+        height: 70px;
+        margin-left: 60px;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #1b9fcb;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    li {
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    li button {
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+    <div id="task">
+        <h1>Todo List</h1>
+
+        <input id="taskInput" type="text" placeholder="Enter task">
+        <button onclick="addTask()">Add Task</button>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let taskText = input.value.trim();
+            if (taskText === "") return;
+
+            let li = document.createElement("li");
+            li.textContent = taskText;
+
+
+            let editBtn = document.createElement("button");
+            editBtn.textContent = "Edit";
+            editBtn.onclick = function() {
+                let newText = prompt("Edit task:", taskText);
+                if (newText) {
+                    li.firstChild.textContent = newText;
+                }
+            };
+
+
+            let deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.onclick = function() {
+                li.remove();
+            };
+
+            li.append(" ", editBtn, " ", deleteBtn);
+            document.getElementById("taskList").appendChild(li);
+
+            input.value = "";
+        }
+    </script>
+
+</body>
+
+</html>

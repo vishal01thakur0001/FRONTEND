@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 20px;
+            background-color: white;
+            flex-direction: column;
+        }
+        
+        .small-box {
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+        }
+        
+        .big-box {
+            width: 400px;
+            height: 400px;
+            background-color: rgb(118, 169, 88);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            background-image: url("vishal.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="small-box boxy-box" id="box"> </div>
+
+    <button class="btn"> Click Me</button>
+
+
+    <script>
+        const box = document.getElementById("box");
+        const btn = document.querySelector(".btn");
+
+        btn.addEventListener("click", function() {
+            // box.style.width = "400px";
+            // box.style.height = "400px";
+            // box.style.backgroundColor = "orange";
+            // box.style.borderRadius = "50%";
+            box.classList.toggle("big-box");
+            box.classList.toggle("small-box");
+
+        });
+    </script>
+</body>
+
+</html>
