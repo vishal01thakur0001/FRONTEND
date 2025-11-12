@@ -1,120 +1,10 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="chessboard.css">
-</head>
-<style>
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #ddd;
-    }
-    
-    .board {
-        width: 320px;
-        height: 320px;
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        border: 2px solid black;
-        box-sizing: border-box;
-    }
-    
-    .white {
-        background: #eee;
-    }
-    
-    .black {
-        background: #444;
-    }
-</style>
-
-<body>
-
-    <div class="board">
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-    </div>
-    
-
-</body>
-
-</html> -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Chessboard</title>
+    <title>chess</title>
     <style>
         body {
             display: flex;
@@ -129,7 +19,7 @@
             height: 400px;
             display: grid;
             grid-template-columns: repeat(8, 1fr);
-            border: 2px solid black;
+            border: 4px solid black;
             box-sizing: border-box;
         }
         
@@ -145,8 +35,9 @@
 </head>
 
 <body>
+    <h1>Let's Play</h1>
     <div class="chessboard">
-        <div class="white"></div>
+        <!-- <div class="white"></div>
         <div class="black"></div>
         <div class="white"></div>
         <div class="black"></div>
@@ -208,10 +99,36 @@
         <div class="black"></div>
         <div class="white"></div>
         <div class="black"></div>
+
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div> -->
+
+
     </div>
+
+    <h1> Chess</h1>
+
     <script>
+        const chessboard = document.querySelector('.chessboard');
+
+        for (let white = 1; white <= 8; white++) {
+            for (let black = 1; black <= 8; black++) {
+                const box = document.createElement('div');
+                if ((white + black) % 2 === 0) {
+                    box.classList.add('white');
+                } else {
+                    box.classList.add('black');
+                }
+                chessboard.appendChild(box);
+            }
+        }
     </script>
 </body>
-
 
 </html>
